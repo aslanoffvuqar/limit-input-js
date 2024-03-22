@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="box">
+        <textarea name="text" id="textarea" maxlength=""></textarea>
+        <div class="counter">
+            <p class="counter_characters">0</p>/<p class="text_length">100</p>
+        </div>
+    </div>
+
+
+    <script>
+        let textarea = document.getElementById('textarea');
+        let counter_characters = document.querySelector('.counter_characters');
+        let box = document.querySelector('.box')
+        let textLength = document.querySelector(".text_length")
+
+        textarea.oninput = function () {
+            let vallenght = textarea.value.length
+            counter_characters.innerText = textarea.value.length;
+            // textLength.innerText = textarea.value.length;
+            (vallenght > 100) ? counter_characters.classList.add("active") : counter_characters.classList.remove("active");
+            (vallenght > 100) ? box.classList.add("active") : box.classList.remove("active");
+            (vallenght > 100) ? textarea.classList.add("active") : textarea.classList.remove("active");
+            (vallenght > 100) ? textLength.classList.add("active") : textLength.classList.remove("active");
+
+        }
+    </script>
+
+
+
+</body>
+
+</html>
